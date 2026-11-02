@@ -1,4 +1,4 @@
-const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY || window.API_KEY || "your_api_key_here";
+const API_KEY = window.VITE_OPENWEATHER_API_KEY || window.API_KEY || import.meta.env.VITE_OPENWEATHER_API_KEY;
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 const MAX_RECENT = 5;
 
