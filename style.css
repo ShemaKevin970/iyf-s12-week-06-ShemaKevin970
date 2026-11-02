@@ -1,0 +1,71 @@
+:root {
+    --color-primary: #1f6feb;
+    --color-text: #1c2128;
+    --color-muted: #57606a;
+    --color-border: #d0d7de;
+    --color-danger: #cf222e;
+    --radius: 12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    color: var(--color-text);
+    background: linear-gradient(160deg, #e8f1ff, #f6f8fa);
+    min-height: 100vh;
+}
+
+.weather-app { max-width: 480px; margin: 2rem auto; padding: 0 1rem; }
+h1 { margin-bottom: 1rem; }
+
+.visually-hidden {
+    position: absolute; width: 1px; height: 1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.hidden { display: none; }
+
+#search-form { display: flex; gap: 0.5rem; }
+#city-input { flex: 1; padding: 0.7rem; font-size: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius); }
+
+button {
+    font: inherit;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius);
+    background: var(--color-primary);
+    color: #fff;
+    cursor: pointer;
+}
+button:focus-visible, input:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
+
+#loading { margin: 1rem 0; color: var(--color-muted); }
+.error { margin: 1rem 0; padding: 0.75rem; border-radius: var(--radius); background: #ffebe9; color: var(--color-danger); }
+
+#weather-display {
+    margin: 1rem 0;
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+}
+.weather-main { text-align: center; }
+#weather-icon { width: 100px; height: 100px; margin: 0 auto; display: block; }
+#temperature { font-size: 3rem; font-weight: 700; }
+#description { text-transform: capitalize; color: var(--color-muted); }
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+.detail { display: flex; flex-direction: column; padding: 0.75rem; border-radius: 8px; background: #f6f8fa; }
+.detail span:first-child { font-size: 0.85rem; color: var(--color-muted); }
+.detail span:last-child { font-weight: 600; }
+
+#recent-searches { margin-top: 1.5rem; }
+#search-history { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.history-item { background: #fff; color: var(--color-text); border-color: var(--color-border); border-radius: 999px; }
